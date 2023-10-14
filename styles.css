@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    background: #f1f1f9;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #111;
+}
+
+h1 {
+    margin: 0;
+    font-size: 120px;
+    font-weight: lighter;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 34px;
+    font-weight: 300;
+}
+
+p {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* WEATHER TODAY */
+
+.background-color {
+    background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);    
+    padding: 30px;
+    color: #fff;
+    height: 47vh;
+    border-bottom-left-radius: 60% 60px;
+    border-bottom-right-radius: 60% 60px;
+}
+
+.background-color {
+    background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);
+    padding: 30px;
+    color: #fff;
+    height: 47vh;
+    border-bottom-left-radius: 60% 60px;
+    border-bottom-right-radius: 60% 60px;
+  
+    /* Add the animation */
+    animation: changeBackgroundColor 10s linear infinite;
+  }
+  
+  @keyframes changeBackgroundColor {
+    0% {
+      background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);
+    }
+    50% {
+      background: linear-gradient(-45deg, #89d1f5 0%, #9cfbea 70%);
+    }
+    100% {
+      background: linear-gradient(-45deg, #89d1f5 0%, #75c1bb 70%);
+    }
+  }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.search-button {
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+}
+
+.date {
+    font-size: 16px;
+    font-weight: semi-bold;
+}
+
+.celcius {
+    margin: 20px 0;
+    font-size: 40px;
+}
+
+.todays-weather {
+    display: flex;
+    flex-direction: column;
+}
+
+.temp-img-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temperature-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.temp-img-container img {
+    height: 150px;
+    width: 150px;
+}
+
+.sun-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FIVE DAYS FORECAST */
+
+.fiveday-forecast {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.min-max-temp {
+    display: flex;
+}
+
+.fiveday-forecast p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.fiveday-forecast img {
+    height: 50px;
+    width: 50px;
+}
+  
+  
+  .search-button {
+    width: 25px;
+    height: 25px;
+    margin-left: -40px; /* Move the button back inside the container */
+    margin-top: 14px;
+  }
+  
+
+form{
+    background: #fff;
+    width: 300px;
+    height: 55px;
+    display: flex;
+    border-radius: 30px;
+}
+
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: inherit;
+}
+/* MEDIA QUERIES */
+
+@media (min-width: 400px) {
+    .date {
+        font-size: 14px;
+    }
+
+    .search-field {
+        width: 200px;
+    }
+
+
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: inherit;
+}
+}
+
+@media (min-width: 540px) {
+    header,
+    .todays-weather,
+    .fiveday-forecast {
+        max-width: 540px;
+        margin: auto;
+    }
+
+    header {
+        margin-bottom: 0;
+    }
+
+    .temp-img-container img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .search-button {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+    }
+
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: inherit;
+}
+  }
+
+  @media (max-width: 350px) {
+    h1 {
+        font-size: 80px;
+    }
+    
+    h2 {
+        padding-top: 10px;
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+
+    .background-color {
+        min-height: 300px;
+    }
+
+    .search-field {
+        width: 128px;
+    }
+
+    .temp-img-container img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .fiveday-forecast p {
+        font-size: 14px;
+    }
+
+}
+
