@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: #f1f1f9;
+    background: #e1e1f2;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #111;
@@ -14,7 +14,7 @@ h1 {
 
 h2 {
     margin: 0;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 34px;
     font-weight: 300;
 }
@@ -27,58 +27,74 @@ p {
 /* WEATHER TODAY */
 
 .background-color {
-    background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);    
-    padding: 30px;
+    background: linear-gradient(-45deg, #E8E9FF 0%, #8589FF 70%);
+    padding: 40px;
     color: #fff;
     height: 47vh;
-    border-bottom-left-radius: 60% 60px;
-    border-bottom-right-radius: 60% 60px;
+    min-height: 370px;
+    border-bottom-left-radius: 50% 30px;
+    border-bottom-right-radius: 50% 30px;
+    animation: changeBackgroundColor 10s linear infinite;
 }
 
-.background-color {
-    background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);
-    padding: 30px;
-    color: #fff;
-    height: 47vh;
-    border-bottom-left-radius: 60% 60px;
-    border-bottom-right-radius: 60% 60px;
-  
-    /* Add the animation */
-    animation: changeBackgroundColor 10s linear infinite;
-  }
-  
-  @keyframes changeBackgroundColor {
+@keyframes changeBackgroundColor {
     0% {
-      background: linear-gradient(-45deg, #89d1f5 0%, #89f3f0 70%);
+        background: linear-gradient(-45deg, #E8E9FF 0%, #8589FF 70%);
     }
     50% {
-      background: linear-gradient(-45deg, #89d1f5 0%, #9cfbea 70%);
+        background: linear-gradient(-45deg, #E8E9FF 0%, #75c1bb 70%);
     }
     100% {
-      background: linear-gradient(-45deg, #89d1f5 0%, #75c1bb 70%);
+        background: linear-gradient(-45deg, #E8E9FF 0%, #8589FF 70%);
     }
-  }
+}
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
 }
 
 .search-button {
-    width: 20px;
-    height: 20px;
-    margin-left: -30px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.search-field {
+    height: 25px;
+    width: 180px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    outline: none;
+    opacity: 80%;
+    padding: 1px 5px;
+    color: #222350;
+    font-size: 16px;
+}
+
+form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 30px;
 }
 
 .date {
-    font-size: 16px;
-    font-weight: semi-bold;
+    font-size: 12px;
+    text-align: end;
 }
 
-.celcius {
+.celsius {
     margin: 20px 0;
     font-size: 40px;
 }
@@ -139,31 +155,7 @@ header {
     height: 50px;
     width: 50px;
 }
-  
-  
-  .search-button {
-    width: 25px;
-    height: 25px;
-    margin-left: -40px; /* Move the button back inside the container */
-    margin-top: 14px;
-  }
-  
 
-form{
-    background: #fff;
-    width: 300px;
-    height: 55px;
-    display: flex;
-    border-radius: 30px;
-}
-
-form input{
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: inherit;
-}
 /* MEDIA QUERIES */
 
 @media (min-width: 400px) {
@@ -175,14 +167,24 @@ form input{
         width: 200px;
     }
 
+    .celsius {
+        font-size: 34px;
+    }
 
-form input{
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: inherit;
-}
+    .temperature-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .temp-img-container img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .sun-container {
+        margin-top: 40px;
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: 540px) {
@@ -197,36 +199,28 @@ form input{
         margin-bottom: 0;
     }
 
-    .temp-img-container img {
-        height: 200px;
-        width: 200px;
-    }
-
     .search-button {
-        width: 20px;
-        height: 20px;
-        margin-right: 15px;
+        width: 25px;
+        height: 25px;
+        margin-left: -35px;
+        margin-top: 12px;
     }
 
-form input{
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: inherit;
+    .celsius {
+        font-size: 40px;
+    }
 }
-  }
 
-  @media (max-width: 350px) {
+@media (max-width: 350px) {
     h1 {
         font-size: 80px;
     }
-    
+
     h2 {
         padding-top: 10px;
         font-size: 24px;
     }
-    
+
     p {
         font-size: 16px;
     }
@@ -248,5 +242,29 @@ form input{
         font-size: 14px;
     }
 
+    .celsius {
+        font-size: 28px;
+    }
 }
+
+@media (max-width: 767px) {
+    .search-container {
+        flex-direction: row; /* Display button and input side by side */
+        align-items: center;
+    }
+
+    .search-button {
+        margin-right: 10px; /* Add space to the right of the button */
+    }
+
+    .search-field {
+        width: 100%; /* Make the input field take up the remaining width */
+    }
+}
+
+
+
+
+
+
 
